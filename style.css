@@ -1,0 +1,92 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f6f9;
+    color: #333;
+  }
+  
+  /* Layout */
+  .resume-container {
+    display: flex;
+    max-width: 1000px;
+    margin: 40px auto;
+    background: #95d6e5;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .sidebar {
+    width: 30%;
+    background: #0c7280;
+    color: #faf5f5;
+    padding: 30px 20px;
+  }
+  
+  .main-content {
+    width: 70%;
+    padding: 30px;
+  }
+  
+  /* Profile section */
+  .profile {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .profile img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #6be9f2;
+  }
+  
+  .profile h1 {
+    margin: 15px 0 5px;
+    font-size: 22px;
+  }
+  
+  .profile p {
+    font-size: 14px;
+    color: #dfe9ff;
+  }
+  
+  /* Sidebar sections */
+  .sidebar h2 {
+    border-bottom: 2px solid #27cdba;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  
+  .sidebar p,
+  .sidebar li {
+    font-size: 14px;
+    margin: 6px 0;
+  }
+  
+  /* Main content */
+  .main-content h2 {
+    color: #1f42d0;
+    margin-bottom: 10px;
+    font-size: 20px;
+    border-left: 4px solid #06074c;
+    padding-left: 10px;
+  }
+  
+  .main-content ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .main-content ul li {
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+  
+  .main-content p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
