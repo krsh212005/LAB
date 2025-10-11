@@ -1,92 +1,211 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background: #f4f6f9;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
     color: #333;
-  }
-  
-  /* Layout */
-  .resume-container {
-    display: flex;
-    max-width: 1000px;
-    margin: 40px auto;
-    background: #95d6e5;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    border-radius: 12px;
-    overflow: hidden;
-  }
-  
-  .sidebar {
-    width: 30%;
-    background: #0c7280;
-    color: #faf5f5;
-    padding: 30px 20px;
-  }
-  
-  .main-content {
-    width: 70%;
-    padding: 30px;
-  }
-  
-  /* Profile section */
-  .profile {
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1, h2 {
     text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+.form-section {
+    background: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
     margin-bottom: 30px;
-  }
-  
-  .profile img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #6be9f2;
-  }
-  
-  .profile h1 {
-    margin: 15px 0 5px;
-    font-size: 22px;
-  }
-  
-  .profile p {
-    font-size: 14px;
-    color: #dfe9ff;
-  }
-  
-  /* Sidebar sections */
-  .sidebar h2 {
-    border-bottom: 2px solid #27cdba;
-    padding-bottom: 5px;
-    margin-top: 20px;
-    font-size: 18px;
-  }
-  
-  .sidebar p,
-  .sidebar li {
-    font-size: 14px;
-    margin: 6px 0;
-  }
-  
-  /* Main content */
-  .main-content h2 {
-    color: #1f42d0;
+}
+
+.form-section input,
+.form-section select {
+    width: 100%;
+    padding: 10px;
     margin-bottom: 10px;
-    font-size: 20px;
-    border-left: 4px solid #06074c;
-    padding-left: 10px;
-  }
-  
-  .main-content ul {
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-section button {
+    background: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.form-section button:hover {
+    background: #2980b9;
+}
+
+.list-section {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#studentList, #attendanceList {
     list-style: none;
-    padding: 0;
-  }
-  
-  .main-content ul li {
-    margin-bottom: 8px;
-    font-size: 15px;
-  }
-  
-  .main-content p {
-    font-size: 15px;
-    line-height: 1.5;
-  }
+}
+
+.student-item, .attendance-item {
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.student-item:hover, .attendance-item:hover {
+    background: #f8f9fa;
+}
+
+.student-content, .attendance-content {
+    flex-grow: 1;
+}
+
+.student-content h3, .attendance-content h3 {
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.student-content p, .attendance-content p {
+    color: #7f8c8d;
+    margin-bottom: 10px;
+}
+
+.attendance-status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.status-present { background: #28a745; }
+.status-absent { background: #dc3545; }
+.status-late { background: #ffc107; color: #212529; }
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-btn, .delete-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.edit-btn {
+    background: #f39c12;
+    color: white;
+}
+
+.edit-btn:hover {
+    background: #e67e22;
+}
+
+.delete-btn {
+    background: #e74c3c;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #c0392b;
+}
+
+.edit-form {
+    display: none; /* Hidden by default; shown via JS */
+    margin-top: 10px;
+    padding: 10px;
+    background: #fff3cd;
+    border-radius: 4px;
+}
+
+.edit-form input,
+.edit-form select {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+
+.edit-form button {
+    background: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.edit-form button:hover {
+    background: #218838;
+}
+
+.cancel-btn {
+    background: #6c757d;
+}
+
+.cancel-btn:hover {
+    background: #5a6268;
+}
+
+.error {
+    color: #dc3545;
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+    background: #f8d7da;
+    border-radius: 4px;
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .student-item, .attendance-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

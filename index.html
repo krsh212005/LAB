@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Student Attendance System</h1>
+
+    <form id="studentForm" class="form-section">
+        <h2>Add New Student</h2>
+        <label for="nameInput">Student Name:</label>
+        <input type="text" id="nameInput" placeholder="Student Name" required>
+
+        <label for="emailInput">Email:</label>
+        <input type="email" id="emailInput" placeholder="Email" required>
+
+        <label for="gradeInput">Grade:</label>
+        <input type="text" id="gradeInput" placeholder="Grade (e.g., 10)" required>
+
+        <button type="submit">Add Student</button>
+    </form>
+
+    <form id="attendanceForm" class="form-section">
+        <h2>Mark Attendance</h2>
+        <label for="studentSelect">Select Student:</label>
+        <select id="studentSelect" required>
+            <option value="">Select Student</option>
+        </select>
+
+        <label for="dateInput">Date:</label>
+        <input type="date" id="dateInput" required>
+
+        <label for="statusInput">Status:</label>
+        <select id="statusInput" required>
+            <option value="">Status</option>
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+            <option value="Late">Late</option>
+        </select>
+
+        <button type="submit">Mark Attendance</button>
+    </form>
+
+    <section class="list-section">
+        <h2>Students List</h2>
+        <ul id="studentList"></ul>
+    </section>
+
+    <section class="list-section">
+        <h2>Attendance Records</h2>
+        <ul id="attendanceList"></ul>
+        <div id="errorMessage" class="error"></div>
+    </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
